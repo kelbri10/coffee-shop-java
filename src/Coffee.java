@@ -21,9 +21,9 @@ public class Coffee {
         boolean isPlacingOrder = true;
 
         //creates coffee objects
-        Mocha mocha = new Mocha();
-        Espresso espresso = new Espresso();
-        Latte latte = new Latte();
+        Coffee mocha = new Mocha();
+        Coffee espresso = new Espresso();
+        Coffee latte = new Latte();
 
         Coffee[] coffees = {mocha, espresso, latte};
         System.out.println("=============================");
@@ -54,9 +54,10 @@ public class Coffee {
                     break;
                 case "4":
                     double total = 0;
+                    System.out.println("You ordered: ");
                     for(Coffee coffee : coffees){
                         total = total + (coffee.numOrdered * coffee.price);
-                        System.out.println("You ordered: " + " " + coffee.numOrdered + " " + coffee.name);
+                        System.out.println(coffee.numOrdered + " " + coffee.name);
                     }
 
                     /*Big decimal is a package that has a setScale method to round numbers, the rounding mode HALF UP
